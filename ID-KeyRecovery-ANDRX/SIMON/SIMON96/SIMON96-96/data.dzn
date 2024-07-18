@@ -1,0 +1,6 @@
+
+RD = 16;
+m = 2;
+block_size = 96;
+RB = 4;
+RF = 4;
