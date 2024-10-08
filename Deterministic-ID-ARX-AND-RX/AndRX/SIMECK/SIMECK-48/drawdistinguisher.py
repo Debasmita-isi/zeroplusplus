@@ -27,9 +27,9 @@ class Draw(object):
     def draw_upperM(self, r):
         output = {
             "left": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxl1"][r][i]], i) for i in
-                             range(self.block_size // 2) if self.result["mxl"][r][i] != 0),
+                             range(self.block_size // 2) if self.result["mxl1"][r][i] != 0),
             "right": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxr1"][r][i]], i) for i in
-                              range(self.block_size // 2) if self.result["mxr"][r][i] != 0)
+                              range(self.block_size // 2) if self.result["mxr1"][r][i] != 0)
         }
         return output
 
@@ -47,9 +47,9 @@ class Draw(object):
     def draw_lowerM(self, r):
         output = {
             "left": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxl1"][r][i]], i) for i in
-                            range(self.block_size // 2) if self.result["mxl"][r][i] != 0),
+                            range(self.block_size // 2) if self.result["mxl1"][r][i] != 0),
             "right": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxr1"][r][i]], i) for i in
-                             range(self.block_size // 2) if self.result["mxr"][r][i] != 0)
+                             range(self.block_size // 2) if self.result["mxr1"][r][i] != 0)
         }
         return output
 
