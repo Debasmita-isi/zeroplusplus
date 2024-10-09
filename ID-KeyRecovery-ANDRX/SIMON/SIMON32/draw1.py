@@ -292,16 +292,16 @@ class Draw:
                 \simoncompactfalse % vertically less compact layout
                 \SimonInit[""" + str(self.block_size) + """]""") + "\n"
         #find postion of contradiction
-        contradiction = self.find_contradiction()
-        if contradiction:
-            print("Contradiction found at round {0} and position {1}".format(contradiction[0], contradiction[1]))
+        #contradiction = self.find_contradiction()
+        #if contradiction:
+        #    print("Contradiction found at round {0} and position {1}".format(contradiction[0], contradiction[1]))
             # contentsDist += r"""
 
-            posJ = contradiction[0]*-2.4
-            posI = contradiction[1]*0.05
-            posG = posJ*0.9
-            contentsDist += r"""
-            \spy [red] on (""" + str(posI) + """, """ + str(posJ) + """) in node [left] at (-0.4, """+str(posG)+""");""" + "\n"
+        #   posJ = contradiction[0]*-2.4
+        #    posI = contradiction[1]*0.05
+        #    posG = posJ*0.9
+        #    contentsDist += r"""
+        #    \spy [red] on (""" + str(posI) + """, """ + str(posJ) + """) in node [left] at (-0.4, """+str(posG)+""");""" + "\n"
 
         # draw the first round without the key
         state = self.draw_eb(0)
@@ -393,4 +393,3 @@ class Draw:
             f.write(openfile + contentsDist + closefile)
         with open(self.output_file_name.split(".")[0] + "_kr.tex", "w") as f:
             f.write(openfile + contentsKR + closefile)
-
