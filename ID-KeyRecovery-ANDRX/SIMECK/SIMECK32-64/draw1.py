@@ -260,7 +260,7 @@ class Draw:
         contents += r"""\end{document}"""
         with open(self.output_file_name, "w") as output_file:
             output_file.write(contents)
-    def genrate_attack_shape_2files(self):
+    def generate_attack_shape_2files(self):
         """
         Generate the attack shape into Distinguisher file and Key Recovery file for Simeck
         """
