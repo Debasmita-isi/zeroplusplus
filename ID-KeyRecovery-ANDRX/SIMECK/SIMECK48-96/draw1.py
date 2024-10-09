@@ -260,7 +260,7 @@ class Draw:
         contents += r"""\end{document}"""
         with open(self.output_file_name, "w") as output_file:
             output_file.write(contents)
-    def genrate_attack_shape_2files(self):
+    def generate_attack_shape_2files(self):
         """
         Generate the attack shape into Distinguisher file and Key Recovery file for Simeck
         """
@@ -279,16 +279,16 @@ class Draw:
                 \simeckcompactfalse
                 \SimeckInit[""" + str(self.block_size) + """]""") + "\n"
         # find postion of contradiction
-        contradiction = self.find_contradiction()
-        if contradiction:
-            print("Contradiction found at round {0} and position {1}".format(contradiction[0], contradiction[1]))
-            # contentsDist += r"""
+        #contradiction = self.find_contradiction()
+        #if contradiction:
+        #    print("Contradiction found at round {0} and position {1}".format(contradiction[0], contradiction[1]))
+        #    # contentsDist += r"""
 
-            posJ = contradiction[0] * -2.4
-            posI = contradiction[1] * 0.05
-            posG = posJ * 0.9
-            contentsDist += r"""
-                    \spy [red] on (""" + str(posI) + """, """ + str(posJ) + """) in node [left] at (-0.4, """ + str(posG) + """);""" + "\n"
+        #    posJ = contradiction[0] * -2.4
+        #    posI = contradiction[1] * 0.05
+        #    posG = posJ * 0.9
+        #    contentsDist += r"""
+        #            \spy [red] on (""" + str(posI) + """, """ + str(posJ) + """) in node [left] at (-0.4, """ + str(posG) + """);""" + "\n"
 
         # draw the first round without the key
         state = self.draw_eb(0)
