@@ -1020,8 +1020,20 @@ To find a 22-round ID key-recovery attack for SIMON-64-96, navigate to the follo
     ```bash
     minizinc --solver ortools -p 8 distinguisher.mzn data.dzn > output.txt
     ```
-  
-2. **Using the provided Python script**: Alternatively, you can run the following command to directly generate the `.tex` file for the key recovery:
+    Then, one can run the following command to generate the shape of the ID key recovery attack.
+
+   ```bash
+    python3 drawer.py output.txt -RB 4 -RD 13 -MD 5 -RF 5
+    ```
+     This will generate two files `output_dist.tex` and `output_kr.tex` which contains the figures for distinguishing attack and key recovery attack, respectively. Finally, using the follwoing command, one can able to generate the shape of 
+    distinguishers and key recovery attacks.
+
+    ```bash
+   latexmk -pdf output_dist.tex
+   latexmk -pdf output_kr.tex
+   ```
+    
+3. **Using the provided Python script**: Alternatively, you can run the following command to directly generate the `.tex` file for the key recovery:
       ```bash
     python3 attacki.py -RB 4 -RD 13 -MD 5 -RF 5
       ```
