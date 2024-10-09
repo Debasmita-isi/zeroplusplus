@@ -44,7 +44,7 @@ class Drawer:
         self.result = attributes
         self.RB = params["RB"]
         self.RD = params["RD"]
-        self.RD = params["MD"]
+        self.MD = params["MD"]
         self.RF = params["RF"]
         self.RT = self.RB + self.RD + self.RF
         self.block_size = params["block_size"]
@@ -71,11 +71,11 @@ def parse_command_line():
     parser = ArgumentParser(description='Draw the attack')
     parser.add_argument('filename', default="input.txt", help='The file containing the input data')
     parser.add_argument('-RB', default=4, type=int, help='The number of rounds for EB')
-    parser.add_argument('-RD', default=13, type=int, help='The number of rounds for ED')
+    parser.add_argument('-RD', default=11, type=int, help='The number of rounds for ED')
     parser.add_argument('-MD', default=5, type=int, help='The number of rounds for ED')
     parser.add_argument('-RF', default=5, type=int, help='The number of rounds for EF')
-    parser.add_argument('-bs', default=64, type=int, help='The block size')
-    parser.add_argument('-o', default="simon64-128-23r-eq.tex", type=str, help='The output file')
+    parser.add_argument('-bs', default=32, type=int, help='The block size')
+    parser.add_argument('-o', default="output.tex", type=str, help='The output file')
     parser.add_argument('-dzn', default=None, type=str, help='The .dzn file containing parameters')
     args = parser.parse_args()
     if args.dzn:
