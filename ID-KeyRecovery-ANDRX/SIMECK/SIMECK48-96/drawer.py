@@ -101,6 +101,6 @@ if __name__ == '__main__':
     attributes = read_from_file(args.filename)
     drawer = Drawer(attributes, params)
     draw = Draw(drawer)
-    # draw.generate_attack_shape()
-    draw.generate_attack_shape_2files()
+    draw.generate_attack_shape()
+    #draw.generate_attack_shape_2files()
     print("Attack shape generated successfully")
