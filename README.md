@@ -1121,7 +1121,7 @@ endif
 ```
 
 ## Reference
-1. [as](https://tosc.iacr.org/index.php/ToSC/article/view/9858)
+1. [Throwing Boomerangs into Feistel Structures](https://tosc.iacr.org/index.php/ToSC/article/view/9858)
 
 ## Citation
 
