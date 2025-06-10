@@ -126,8 +126,8 @@ To set up the code for use, follow the steps below:
   ```bash
   docker run --rm -it zeroplusplus
   ```
-
-4. **Run the code**:
+  
+1. **Run the code**:
 
    Once all dependencies are installed, you can start running the scripts for the corresponding ciphers.
    
