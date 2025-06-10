@@ -18,7 +18,7 @@ class ZCDistinguisher:
         self.time_limit = params["time_limit"]
         #self.is_combined = params["is_combined"]
         self.number_of_threads = params["number_of_threads"]
-        slef.supported_cp_solvers = [solver_name for solver_name in minizinc.default_driver.available_solvers().keys()]
+        self.supported_cp_solvers = [solver_name for solver_name in minizinc.default_driver.available_solvers().keys()]
         self.cp_solver = minizinc.Solver.lookup(self.cp_solver_name)
         self.mzn_file_name = "distinguisher.mzn"
 
