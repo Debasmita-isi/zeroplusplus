@@ -70,7 +70,7 @@ class IntegralARXDistinguisher:
 def load_params(args):
   params = {
     "RD": 16,
-    "MD": 9,
+    "MD": 6,
     "output_file_name": "output.tex",
     "cp_solver_name": "ortools",
     "time_limit": -1,
@@ -103,7 +103,7 @@ def main():
   '''
   parser = argparse.ArgumentParser(description="Integral distinguisher for SIMON32/64.")
   parser.add_argument("-RD", type=int, default=16, help="The number of rounds")
-  parser.add_argument("-MD", type=int, default=9, help="The number of rounds")
+  parser.add_argument("-MD", type=int, default=6, help="The number of rounds")
   parser.add_argument("-output-file-name", type=str, default="output.tex", help="The name of the output file")
   # Fetch available solvers from MiniZinc
   available_solvers = [solver_name for solver_name in minizinc.default_driver.available_solvers().keys()]

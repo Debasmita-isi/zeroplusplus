@@ -96,7 +96,7 @@ constraint forall(round in 0..(RD - 1), i in 0..(k - 1))
 constraint forall(round in 0..(RD - 1), i in 0..(k - 1))
 (
 
-    and(ydr[round, i], zdr[round, i], pul[round, i])
+    and(yul[round, i], zul[round, i], pul[round, i])
 
 );
 
@@ -105,7 +105,7 @@ constraint forall(round in 0..(RD - 1), i in 0..(k - 1))
 constraint forall(round in 0..(RD - 1), i in 0..(k - 1))
 (
 
-    exclusiveor(pul[round, i], wdr[round, i], qul[round, i])
+    exclusiveor(pul[round, i], wul[round, i], qul[round, i])
 
 );
 
