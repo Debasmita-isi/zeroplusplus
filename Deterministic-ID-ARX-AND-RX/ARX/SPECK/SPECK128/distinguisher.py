@@ -18,12 +18,7 @@ class IDARXDistinguisher:
         self.cp_solver_name = params["cp_solver_name"]
         self.time_limit = params["time_limit"]
         self.number_of_threads = params["number_of_threads"]
-        self.supported_cp_solvers = ["gecode", "ortools", "gurobi", "scip", "choco", "cbc", "chuffed", "picat"]
-        assert (self.cp_solver_name in self.supported_cp_solvers)
-
-        # if self.cp_solver_name == "ortools":
-        #     self.cp_solver_name = "com.google.ortools.sat"
-
+        self.supported_cp_solvers = [solver_name for solver_name in minizinc.default_driver.available_solvers().keys()]
         self.cp_solver = minizinc.Solver.lookup(self.cp_solver_name)
         self.mzn_file_name = "distinguisher.mzn"
 
@@ -95,8 +90,11 @@ def parse_command_line():
     parser.add_argument('-RD', default=6, type=int, help='The number of rounds for ED')
     parser.add_argument('-bs', default=128, type=int, help='The block size')
     parser.add_argument('-o', default="output.tex", type=str, help='The output file')
-    parser.add_argument("-solver", type=str, default="ortools",
-                        help="The name of the constraint programming solver")
+    # Fetch available solvers from MiniZinc
+    available_solvers = [solver_name for solver_name in minizinc.default_driver.available_solvers().keys()]
+    parser.add_argument("-sl", "--solver", default="cp-sat", type=str,
+                        choices=available_solvers,
+                        help="Choose a CP solver")    
     parser.add_argument("-tl", type=int, default=-1, help="The time limit in seconds")
     parser.add_argument("-p", type=int, default=8, help="The number of threads")
     parser.add_argument('-dzn', default=None, type=str, help='The .dzn file containing parameters')

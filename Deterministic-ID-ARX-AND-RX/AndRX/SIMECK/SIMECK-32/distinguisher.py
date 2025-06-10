@@ -17,12 +17,7 @@ class IntegralARXDistinguisher:
         self.cp_solver_name = params["cp_solver_name"]
         self.time_limit = params["time_limit"]
         self.number_of_threads = params["number_of_threads"]
-        self.supported_cp_solvers = ["gecode", "ortools", "gurobi", "scip", "choco", "cbc", "chuffed", "picat"]
-        assert (self.cp_solver_name in self.supported_cp_solvers)
-
-        #if self.cp_solver_name == "ortools":
-        #    self.cp_solver_name = "com.google.ortools.sat"
-
+        self.supported_cp_solvers = [solver_name for solver_name in minizinc.default_driver.available_solvers().keys()]
         self.cp_solver = minizinc.Solver.lookup(self.cp_solver_name)
         self.mzn_file_name = "distinguisher.mzn"
 
@@ -78,7 +73,7 @@ def load_params(args):
         "RD": 11,
         "MD": 7,
         "output_file_name": "output.tex",
-        "cp_solver_name": "ortools",
+        "cp_solver_name": "cp-sat",
         "time_limit": -1,
         "block_size": 32,
         "number_of_threads": 8
@@ -99,7 +94,6 @@ def load_params(args):
         params["number_of_threads"] = args.number_of_threads
     return params
 
-
 def main():
     '''
     Parse the command line arguments
@@ -108,7 +102,11 @@ def main():
     parser.add_argument("-RD", type=int, default=11, help="The number of rounds")
     parser.add_argument("-MD", type=int, default=7, help="The number of middle rounds")
     parser.add_argument("-output-file-name", type=str, default="output.tex", help="The name of the output file")
-    parser.add_argument("-cp-solver-name", type=str, default="ortools",
+
+    # Fetch available solvers from MiniZinc
+    available_solvers = [solver_name for solver_name in minizinc.default_driver.available_solvers().keys()]
+    parser.add_argument("-cp-solver-name", type=str, default="cp-sat",
+                        choices=available_solvers,
                         help="The name of the constraint programming solver")
     parser.add_argument("-time-limit", type=int, default=-1, help="The time limit in seconds")
     parser.add_argument("-block-size", type=int, default=32, help="The block size of SIMECK")

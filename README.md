@@ -5,22 +5,22 @@ This repository contains the source code for the tools utilized in our paper acc
   
   ## Table of Contents
 - [Finding Complete Impossible Differential Attacks on AndRX Ciphers and Efficient Distinguishers for ARX Designs](#finding-complete-impossible-differential-attacks-on-andrx-ciphers-and-efficient-distinguishers-for-arx-designs)
-  * [Table of Contents](#table-of-contents)
-  * [Repository Structure](#repository-structure)
-    + [Files in Each Folder](#files-in-each-folder)
-    + [Overall Structure](#overall-structure)
-  * [Requirements](#requirements)
-  * [Installation](#installation)
-  * [Usage](#usage)
-    + [Finding Distinguishers (ID or ZC)](#finding-distinguishers-id-or-zc)
-    + [Finding ID Key Recovery Attacks](#finding-id-key-recovery-attacks)
-    + [Example 1: ID Distinguisher on SPECK](#example-1-id-distinguisher-on-speck)
-    + [Example 2: ZC Distinguisher on Simeck](#example-2-zc-distinguisher-on-simeck)
-    + [Example 3: ID Key Recovery on SIMON](#example-3-id-key-recovery-on-simon)
-   * [Encoding AND, Modular Addition and Other Building Block Functions](#encoding-and-modular-addition-and-other-building-block-functions)
-      + [Constructing the CP Constraints Presented in Proposition 4](#constructing-the-cp-constraints-presented-in-proposition-4)
-   * [Citation](#citation)
-   * [License ](#license-)
+  - [Table of Contents](#table-of-contents)
+  - [Repository Structure](#repository-structure)
+    - [Files in Each Folder](#files-in-each-folder)
+    - [Overall Structure](#overall-structure)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Finding Distinguishers (ID or ZC)](#finding-distinguishers-id-or-zc)
+    - [Finding ID Key Recovery Attacks](#finding-id-key-recovery-attacks)
+    - [Example 1: ID Distinguisher on SPECK](#example-1-id-distinguisher-on-speck)
+    - [Example 2: ZC Distinguisher on Simeck](#example-2-zc-distinguisher-on-simeck)
+    - [Example 3: ID Key Recovery on SIMON](#example-3-id-key-recovery-on-simon)
+  - [Encoding AND, Modular Addition and Other Building Block Functions](#encoding-and-modular-addition-and-other-building-block-functions)
+    - [Constructing the CP Constraints Presented in Proposition 4](#constructing-the-cp-constraints-presented-in-proposition-4)
+  - [Citation](#citation)
+  - [License ](#license-)
 
 ## Repository Structure
 
@@ -114,8 +114,19 @@ To set up the code for use, follow the steps below:
 3. **Install the required dependencies**:
 
    Make sure to install the listed software and solvers according to their documentation.
+   We have also prepared a Dockerfile to install all the dependencies. 
+   You can navigate to the [Dockerfile](docker) and build the Docker image using the following command:
 
-4. **Run the code**:
+  ```bash
+  docker build Dockerfile -t zeroplusplus .
+  ```
+  After building the Docker image, you can run the container using the following command:
+      
+  ```bash
+  docker run --rm -it zeroplusplus
+  ```
+  
+1. **Run the code**:
 
    Once all dependencies are installed, you can start running the scripts for the corresponding ciphers.
    
