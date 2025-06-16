@@ -1,0 +1,127 @@
+
+\documentclass[varwidth=100cm]{standalone}
+\usepackage{tikz}
+\usepackage{simeck}
+\begin{document}
+\begin{figure}
+    \begin{tikzpicture}[>=latex,fillopts/.style={black},raster/.style={gray!50}]
+        \simeckcompactfalse
+        \begin{scope}[local bounding box=SimeckInit]
+            \SimeckInit[48]
+                        \SimeckRoundShort{1}
+                            {\TFill[upperone]{s0}}
+                            {}
+                        \SimeckRoundShort{2}
+                            {}
+                            {\TFill[upperone]{s0}}
+                        \SimeckRoundShort{3}
+                            {\TFill[upperone]{s0}}
+                            {\TFill[upperunknown]{s0}\TFill[upperone]{s1}\TFill[upperunknown]{s5}}
+                        \SimeckRoundShort{4}
+                            {\TFill[upperunknown]{s0}\TFill[upperone]{s1}\TFill[upperunknown]{s5}}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperone]{s2}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s10}}
+                        \SimeckRoundShort{5}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperone]{s2}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s10}}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperone]{s3}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s15}}
+                        \SimeckRoundShort{6}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperone]{s3}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s15}}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperone]{s4}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s20}}
+                        \SimeckRoundShort{7}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperone]{s4}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s20}}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperunknown]{s4}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}}
+                        \SimeckRoundShort{8}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperunknown]{s4}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperunknown]{s4}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s14}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s18}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}\TFill[upperunknown]{s22}}
+                        \SimeckFinal{9}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperunknown]{s4}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s14}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s18}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}\TFill[upperunknown]{s22}}
+                            {\TFill[upperunknown]{s0}\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperunknown]{s4}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s14}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s18}\TFill[upperunknown]{s19}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}\TFill[upperunknown]{s22}\TFill[upperunknown]{s23}}
+
+                        \SimeckGap
+                        \SimeckRoundShort{9}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s14}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s18}\BFill[lowerunknown]{s19}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}\BFill[lowerunknown]{s22}\BFill[lowerunknown]{s23}}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s14}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s18}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}\BFill[lowerunknown]{s22}}
+                        \SimeckRoundShort{10}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s14}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s18}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}\BFill[lowerunknown]{s22}}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerone]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}}
+                        \SimeckRoundShort{11}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerone]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}}
+                            {\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerone]{s8}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s20}}
+                        \SimeckRoundShort{12}
+                            {\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerone]{s8}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s20}}
+                            {\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerone]{s7}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s15}}
+                        \SimeckRoundShort{13}
+                            {\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerone]{s7}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s15}}
+                            {\BFill[lowerunknown]{s5}\BFill[lowerone]{s6}\BFill[lowerunknown]{s10}}
+                        \SimeckRoundShort{14}
+                            {\BFill[lowerunknown]{s5}\BFill[lowerone]{s6}\BFill[lowerunknown]{s10}}
+                            {\BFill[lowerone]{s5}}
+                        \SimeckRoundShort{15}
+                            {\BFill[lowerone]{s5}}
+                            {}
+                        \SimeckFinal{16}
+                            {}
+                            {\BFill[lowerone]{s5}}
+
+                            \end{scope}
+                            \newlength{\mydimen}
+                            \pgfextractx{\mydimen}{\pgfpointanchor{current bounding box}{east}}
+                            \begin{scope}[xshift=\mydimen*1.2,local bounding box=SimeckInit2]
+                                \SimeckInit[48]
+
+                        \SimeckRoundShort{1}
+                            {\BFill[lowerone]{s0}}
+                            {}
+                        \SimeckRoundShort{2}
+                            {\BFill[lowerunknown]{s0}\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s5}}
+                            {\BFill[lowerunknown]{s0}}
+                        \SimeckRoundShort{3}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s10}}
+                            {\BFill[lowerone]{s1}\BFill[lowerunknown]{s5}}
+                        \SimeckRoundShort{4}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s15}}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerone]{s2}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s10}}
+                        \SimeckRoundShort{5}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s20}}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerone]{s3}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s15}}
+                        \SimeckRoundShort{6}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerunknown]{s4}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerone]{s4}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s20}}
+                        \SimeckRoundShort{7}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerunknown]{s4}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s14}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s18}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}\BFill[lowerunknown]{s22}}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerunknown]{s4}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}}
+                        \SimeckRoundShort{8}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerunknown]{s4}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s14}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s18}\BFill[lowerunknown]{s19}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}\BFill[lowerunknown]{s22}\BFill[lowerunknown]{s23}}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s14}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s18}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}\BFill[lowerunknown]{s22}}
+                        \SimeckFinal{9}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s3}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s14}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s18}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}\BFill[lowerunknown]{s22}}
+                            {\BFill[lowerunknown]{s1}\BFill[lowerunknown]{s2}\BFill[lowerunknown]{s5}\BFill[lowerunknown]{s6}\BFill[lowerunknown]{s7}\BFill[lowerunknown]{s8}\BFill[lowerunknown]{s9}\BFill[lowerunknown]{s10}\BFill[lowerunknown]{s11}\BFill[lowerunknown]{s12}\BFill[lowerunknown]{s13}\BFill[lowerunknown]{s14}\BFill[lowerunknown]{s15}\BFill[lowerunknown]{s16}\BFill[lowerunknown]{s17}\BFill[lowerunknown]{s18}\BFill[lowerunknown]{s20}\BFill[lowerunknown]{s21}\BFill[lowerunknown]{s22}}
+                        \SimeckGap
+                        \SimeckRoundShort{9}
+                            {\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s14}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s18}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}\TFill[upperunknown]{s22}}
+                            {\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s14}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s18}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}\TFill[upperunknown]{s22}}
+                        \SimeckRoundShort{10}
+                            {\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s14}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s18}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}\TFill[upperunknown]{s22}}
+                            {\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s3}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s14}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s18}\TFill[upperunknown]{s19}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}\TFill[upperunknown]{s22}\TFill[upperunknown]{s23}}
+                        \SimeckRoundShort{11}
+                            {\TFill[upperunknown]{s1}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperone]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}}
+                            {\TFill[upperunknown]{s1}\TFill[upperunknown]{s2}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s9}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s14}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s18}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}\TFill[upperunknown]{s22}}
+                        \SimeckRoundShort{12}
+                            {\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperone]{s8}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s20}}
+                            {\TFill[upperunknown]{s1}\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s8}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s13}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s17}\TFill[upperunknown]{s20}\TFill[upperunknown]{s21}}
+                        \SimeckRoundShort{13}
+                            {\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperone]{s7}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s15}}
+                            {\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s7}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s12}\TFill[upperunknown]{s15}\TFill[upperunknown]{s16}\TFill[upperunknown]{s20}}
+                        \SimeckRoundShort{14}
+                            {\TFill[upperunknown]{s5}\TFill[upperone]{s6}\TFill[upperunknown]{s10}}
+                            {\TFill[upperunknown]{s5}\TFill[upperunknown]{s6}\TFill[upperunknown]{s10}\TFill[upperunknown]{s11}\TFill[upperunknown]{s15}}
+                        \SimeckRoundShort{15}
+                            {\TFill[upperone]{s5}}
+                            {\TFill[upperunknown]{s5}\TFill[upperunknown]{s10}}
+                        \SimeckFinal{16}
+                            {}
+                            {\TFill[upperone]{s5}}
+                        \end{scope}
+    \end{tikzpicture}
+\caption{15 rounds of \SIMECK[48].}
+\end{figure}
+\end{document}

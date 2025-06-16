@@ -2,10 +2,10 @@ import textwrap
 
 
 class Draw(object):
-  def __init__(self, integral_object, output_file_name="output.tex", attack_summary=""):
-    self.result = integral_object.result
-    self.RD = integral_object.RD
-    self.block_size = integral_object.block_size
+  def __init__(self, impossible_object, output_file_name="output.tex", attack_summary=""):
+    self.result = impossible_object.result
+    self.RD = impossible_object.RD
+    self.block_size = impossible_object.block_size
     self.attack_summary = attack_summary
     self.output_file_name = output_file_name
     self.fillcolor_up = {0: "zero", 1: "upperone", -1: "upperunknown"}
@@ -63,7 +63,7 @@ class Draw(object):
 
   def generate_attack_shape(self):
     """
-    Draw the figure of the Intergal distinguisher
+    Draw the figure of the Impossible distinguisher
     """
     contents = ""
     contents += textwrap.dedent(r"""

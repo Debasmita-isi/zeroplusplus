@@ -8,7 +8,7 @@ from drawdistinguisher import *
 line_separator = "#" * 55
 
 
-class IntegralARXDistinguisher:
+class ImpossibleAndRXDistinguisher:
   def __init__(self, params) -> None:
     self.RD = params["RD"]
     self.MD = params["MD"]
@@ -101,7 +101,7 @@ def main():
   '''
   Parse the command line arguments
   '''
-  parser = argparse.ArgumentParser(description="Integral distinguisher for SIMON32/64.")
+  parser = argparse.ArgumentParser(description="Impossible distinguisher for SIMON32/64.")
   parser.add_argument("-RD", type=int, default=11, help="The number of rounds")
   parser.add_argument("-MD", type=int, default=5, help="The number of rounds")
   parser.add_argument("-output-file-name", type=str, default="output.tex", help="The name of the output file")
@@ -117,8 +117,8 @@ def main():
   args = parser.parse_args()
   params = load_params(args)
 
-  integral_distinguisher = IntegralARXDistinguisher(params)
-  integral_distinguisher.search()
+  impossible_distinguisher = ImpossibleAndRXDistinguisher(params)
+  impossible_distinguisher.search()
 
 
 if __name__ == "__main__":

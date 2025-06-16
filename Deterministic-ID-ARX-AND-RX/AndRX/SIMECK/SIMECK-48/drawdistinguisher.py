@@ -2,11 +2,11 @@ import textwrap
 
 
 class Draw(object):
-    def __init__(self, integral_object, output_file_name="output.tex", attack_summary=""):
-        self.result = integral_object.result
-        self.MD = integral_object.MD
-        self.RD = integral_object.RD
-        self.block_size = integral_object.block_size
+    def __init__(self, impossible_object, output_file_name="output.tex", attack_summary=""):
+        self.result = impossible_object.result
+        self.MD = impossible_object.MD
+        self.RD = impossible_object.RD
+        self.block_size = impossible_object.block_size
         self.attack_summary = attack_summary
         self.output_file_name = output_file_name
         self.fillcolor_up = {0: "zero", 1: "upperone", -1: "upperunknown"}
@@ -18,17 +18,17 @@ class Draw(object):
         """
 
         output = {
-            "left": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) for i in
+            "left": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) for i in
                             range(self.block_size // 2) if self.result["xul"][r][i] != 0),
-            "right": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) for i in
+            "right": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["xur"][r][i] != 0),
         }
         return output
     def draw_upperM(self, r):
         output = {
-            "left": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxl1"][r][i]], i) for i in
+            "left": "".join(r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxl1"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["mxl1"][r][i] != 0),
-            "right": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxr1"][r][i]], i) for i in
+            "right": "".join(r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxr1"][r][i]], i) for i in
                               range(self.block_size // 2) if self.result["mxr1"][r][i] != 0)
         }
         return output
@@ -38,17 +38,17 @@ class Draw(object):
         Paint the lower part of the ED
         """
         output = {
-            "left": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i) for i in
+            "left": "".join(r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i) for i in
                             range(self.block_size // 2) if self.result["xdl"][r][i] != 0),
-            "right": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i) for i in
+            "right": "".join(r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["xdr"][r][i] != 0),
         }
         return output
     def draw_lowerM(self, r):
         output = {
-            "left": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxl1"][r][i]], i) for i in
+            "left": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxl1"][r][i]], i) for i in
                             range(self.block_size // 2) if self.result["mxl1"][r][i] != 0),
-            "right": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxr1"][r][i]], i) for i in
+            "right": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxr1"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["mxr1"][r][i] != 0)
         }
         return output
@@ -80,10 +80,10 @@ class Draw(object):
         Paint the final ED
         """
         output = {
-            "left": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) +
+            "left": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) +
                             "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
                             for i in range(self.block_size // 2)),
-            "right": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) +
+            "right": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) +
                              "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
                              for i in range(self.block_size // 2))
         }
@@ -205,7 +205,7 @@ class Draw(object):
 
     def generate_attack_shape(self):
         """
-        Draw the figure of the Intergal distinguisher
+        Draw the figure of the Impossible distinguisher
         """
 
         
