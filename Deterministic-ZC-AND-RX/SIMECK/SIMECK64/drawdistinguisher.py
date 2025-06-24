@@ -18,18 +18,18 @@ class Draw(object):
         """
 
         output = {
-            "left": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) for i in
+            "left": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) for i in
                             range(self.block_size // 2) if self.result["xul"][r][i] != 0),
-            "right": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) for i in
+            "right": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["xur"][r][i] != 0),
         }
         return output
 
     def draw_upperM(self, r):
         output = {
-            "left": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxl1"][r][i]], i) for i in
+            "left": "".join(r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxl1"][r][i]], i) for i in
                             range(self.block_size // 2) if self.result["mxl1"][r][i] != 0),
-            "right": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxr1"][r][i]], i) for i in
+            "right": "".join(r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["mxr1"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["mxr1"][r][i] != 0)
         }
         return output
@@ -39,18 +39,18 @@ class Draw(object):
         Paint the lower part of the ED
         """
         output = {
-            "left": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i) for i in
+            "left": "".join(r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i) for i in
                             range(self.block_size // 2) if self.result["xdl"][r][i] != 0),
-            "right": "".join("\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i) for i in
+            "right": "".join(r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["xdr"][r][i] != 0),
         }
         return output
 
     def draw_lowerM(self, r):
         output = {
-            "left": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxl1"][r][i]], i) for i in
+            "left": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxl1"][r][i]], i) for i in
                             range(self.block_size // 2) if self.result["mxl1"][r][i] != 0),
-            "right": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxr1"][r][i]], i) for i in
+            "right": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["mxr1"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["mxr1"][r][i] != 0)
         }
         return output
@@ -60,11 +60,11 @@ class Draw(object):
         Draw ED
         """
         output = {
-            "left": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) +
-                            "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
+            "left": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) +
+                            r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
                             for i in range(self.block_size // 2)),
-            "right": "".join("\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) +
-                             "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
+            "right": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) +
+                             r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
                              for i in range(self.block_size // 2))
         }
         return output
@@ -144,7 +144,7 @@ class Draw(object):
                         \end{scope}""" + "\n"
 
         contents += r"""    \end{tikzpicture}""" + "\n"
-        contents += r"""\caption{""" + str(self.RD) + " rounds of \SIMECK[" + str(self.block_size) + "].}\n"
+        contents += r"""\caption{""" + str(self.RD) + r" rounds of \SIMECK[" + str(self.block_size) + "].}\n"
         contents += r"""\end{figure}""" + "\n"
         contents += r"""\end{document}"""
         return contents
@@ -172,7 +172,7 @@ class Draw(object):
                         {""" + state["left"] + """}
                         {""" + state["right"] + "}\n" + "\n"
         contents += r"""   \end{tikzpicture}""" + "\n"
-        contents += r"""\caption{""" + str(self.RD) + " rounds of \SIMECK[" + str(self.block_size) + "].}\n"
+        contents += r"""\caption{""" + str(self.RD) + r" rounds of \SIMECK[" + str(self.block_size) + "].}\n"
         contents += r"""\end{figure}""" + "\n"
         contents += r"""\end{document}"""
         return contents

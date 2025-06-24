@@ -1030,7 +1030,7 @@ To find a 22-round ID key-recovery attack for SIMON-64-96, navigate to the follo
 
 1. **Using MiniZinc**: First, run the distinguisher model using MiniZinc and save the output to a text file.
     ```bash
-    minizinc --solver ortools -p 8 distinguisher.mzn data.dzn > output.txt
+    minizinc --solver cp-sat -p 8 attacki.mzn data_keyrecovery.dzn > output.txt
     ```
     Then, one can run the following command to generate the shape of the ID key recovery attack.
 

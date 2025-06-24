@@ -26,21 +26,21 @@ class Draw(object):
     output["xor"] = ""
     output["and"] = ""
     for i in range(self.block_size//2):
-      output["left"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i)
-      output["right"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i)
-      output["rot8"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["yul"][r][i]], i)
-      output["rot1"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["zul"][r][i]], i)
-      output["rot2"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["wul"][r][i]], i)
-      output["and"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["pul"][r][i]], i)
-      output["xor"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["qul"][r][i]], i)
+      output["left"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i)
+      output["right"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i)
+      output["rot8"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["yul"][r][i]], i)
+      output["rot1"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["zul"][r][i]], i)
+      output["rot2"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["wul"][r][i]], i)
+      output["and"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["pul"][r][i]], i)
+      output["xor"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["qul"][r][i]], i)
 
-      output["left"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
-      output["right"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
-      output["rot8"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["ydr"][r][i]], i)
-      output["rot1"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["zdr"][r][i]], i)
-      output["rot2"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["wdr"][r][i]], i)
-      output["and"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["pdr"][r][i]], i)
-      output["xor"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["qdr"][r][i]], i)
+      output["left"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
+      output["right"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
+      output["rot8"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["ydr"][r][i]], i)
+      output["rot1"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["zdr"][r][i]], i)
+      output["rot2"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["wdr"][r][i]], i)
+      output["and"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["pdr"][r][i]], i)
+      output["xor"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["qdr"][r][i]], i)
 
     return output
 
@@ -54,11 +54,11 @@ class Draw(object):
     output["right"] = ""
 
     for i in range(self.block_size//2):
-      output["left"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i)
-      output["right"] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i)
+      output["left"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i)
+      output["right"] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i)
 
-      output["left"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
-      output["right"] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
+      output["left"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
+      output["right"] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
     return output
 
   def generate_attack_shape(self):
@@ -97,7 +97,7 @@ class Draw(object):
       {""" + state["right"] + "}\n" + "\n"
     contents += "\n"
     contents += r"""  \end{tikzpicture}""" + "\n"
-    contents += r"""\caption{""" + str(self.RD) + " rounds of \SIMON[" + str(self.block_size) +"].}\n"
+    contents += r"""\caption{""" + str(self.RD) + r" rounds of \SIMON[" + str(self.block_size) +"].}\n"
     contents += r"""\end{figure}""" + "\n"
     # contents += r"""\begin{comment}""" + "\n"
     # contents += self.attack_summary

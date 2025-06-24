@@ -502,17 +502,17 @@ constraint sum(round in 1..(RD - 1), i in 0..((2 * k) - 1))(mcontradict[round, i
 %(
 %    contradict[MD, i] = 0
 %);
-array[0..RD, 0..((2 * k) - 1)] of var 0..1: mcontradict;
-constraint forall(round in 0..RD, i in 0..(k - 1))
-(
-    mcontradict[round, i] = mcontradictl[round, i]
-);
-constraint forall(round in 0..RD, i in k..((2 * k) - 1))
-(
-    mcontradict[round, i] = mcontradictr[round, i - k]
-);
+%array[0..RD, 0..((2 * k) - 1)] of var 0..1: mcontradict;
+%constraint forall(round in 0..RD, i in 0..(k - 1))
+%(
+%    mcontradict[round, i] = mcontradictl[round, i]
+%);
+%constraint forall(round in 0..RD, i in k..((2 * k) - 1))
+%(
+%    mcontradict[round, i] = mcontradictr[round, i - k]
+%);
 
-constraint sum(round in 1..(RD - 1), i in 0..((2 * k) - 1))(mcontradict[round, i] + contradict[round, i]) >= 1;
+%constraint sum(round in 1..(RD - 1), i in 0..((2 * k) - 1))(mcontradict[round, i] + contradict[round, i]) >= 1;
 
 
 % #############################################################################################################################################

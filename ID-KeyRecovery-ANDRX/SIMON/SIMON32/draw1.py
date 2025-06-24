@@ -2,15 +2,15 @@ import textwrap
 
 
 class Draw:
-    def __init__(self, integral_object, attack_summary=""):
-        self.result = integral_object.result
-        self.RD = integral_object.RD
-        self.RB = integral_object.RB
-        self.RF = integral_object.RF
-        self.RT = integral_object.RT
-        self.output_file_name = integral_object.output_file_name
+    def __init__(self, impossible_object, attack_summary=""):
+        self.result = impossible_object.result
+        self.RD = impossible_object.RD
+        self.RB = impossible_object.RB
+        self.RF = impossible_object.RF
+        self.RT = impossible_object.RT
+        self.output_file_name = impossible_object.output_file_name
         self.attack_summary = attack_summary
-        self.block_size = integral_object.block_size
+        self.block_size = impossible_object.block_size
         self.fillcolor = {0: "zero", 1: "one", -1: "unknown"}
         self.keyfillcolor = {0: "zero", 1: "active"}
         self.fillcolor_up = {0: "zero", 1: "upperone", -1: "upperunknown"}
@@ -34,12 +34,12 @@ class Draw:
 
         for i in range(self.block_size // 2):
             for key, (val_up, val_lo) in keys_values.items():
-                output[key] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
+                output[key] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
                 self.result[val_up][r][i] != 0 else ""
-                output[key] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
+                output[key] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
                 self.result[val_lo][r][i] != 0 else ""
             if r == 0 and self.result["fin2"][self.RB - 1][i] == 1:
-                output["left"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["left"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
         return output
     def draw_edf(self, r):
         """
@@ -54,12 +54,12 @@ class Draw:
 
         for i in range(self.block_size // 2):
             for key, (val_up, val_lo) in keys_values.items():
-                output[key] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
+                output[key] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
                 self.result[val_up][r][i] != 0 else ""
-                output[key] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
+                output[key] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
                 self.result[val_lo][r][i] != 0 else ""
             if r == 0 and self.result["fin2"][self.RB - 1][i] == 1:
-                output["left"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["left"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
         return output
     def draw_final_ed(self, r):
         """
@@ -74,11 +74,11 @@ class Draw:
 
         for i in range(self.block_size // 2):
             for key, val in keys_values.items():
-                output[key] += "\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val][r][i]], i) if self.result[val][r][i] != 0 else ""
+                output[key] += r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val][r][i]], i) if self.result[val][r][i] != 0 else ""
                 if self.result["k" + val][r][i] == 1:
-                    output[key] += "\PattCell[black]{{s{0}}}".format(i)
+                    output[key] += r"\PattCell[black]{{s{0}}}".format(i)
                 if self.result["kx" + val[-2:]][r][i] == 1:
-                    output[key] += "\MarkCell[red]{{s{0}}}".format(i)
+                    output[key] += r"\MarkCell[red]{{s{0}}}".format(i)
         return output
 
     def draw_eb(self, r):
@@ -98,21 +98,21 @@ class Draw:
         output = {key: "" for key in keys_values.keys()}
         for i in range(self.block_size // 2):
             if self.result["fin1"][r][i] == 1:
-                output["xor"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["xor"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
             if (r > 0 and self.result["fin2"][r - 1][i] == 1):
-                output["left"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["left"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
             for key, (val_fill, val_patt, val_mark) in keys_values.items():
                 if key == "key":
-                    output["key"] += "\Fill[{0}]{{s{1}}}".format(
+                    output["key"] += r"\Fill[{0}]{{s{1}}}".format(
                         self.keyfillcolor[self.result["IK"][r-1][i]], i) if \
                         self.result["IK"][r-1][i] != 0 else ""
                 else:
-                    output[key] += "\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
+                    output[key] += r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
                         self.result[val_fill][r][i] != 0 else ""
                     if val_patt and self.result[val_patt][r][i] == 1:
-                        output[key] += "\PattCell[black]{{s{0}}}".format(i)
+                        output[key] += r"\PattCell[black]{{s{0}}}".format(i)
                     if val_mark and self.result[val_mark][r][i] == 1:
-                        output[key] += "\MarkCell[red]{{s{0}}}".format(i)
+                        output[key] += r"\MarkCell[red]{{s{0}}}".format(i)
 
         return output
     def draw_ebf(self, r):
@@ -126,14 +126,14 @@ class Draw:
         for i in range(self.block_size // 2):
             for key, (val_fill, val_patt, val_mark) in keys_values.items():
                 if key == "key":
-                    output["key"] += "\Fill[{0}]{{s{1}}}".format(
+                    output["key"] += r"\Fill[{0}]{{s{1}}}".format(
                         self.keyfillcolor[self.result["IK"][r - 1][i]], i) if \
                         self.result["IK"][r - 1][i] != 0 else ""
                 else:
-                    output[key] += "\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
+                    output[key] += r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
                         self.result[val_fill][r][i] != 0 else ""
             if self.result["fin2"][self.RB - 1][i] == 1:
-                output["left"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["left"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
 
         return output
     def draw_ef(self, r):
@@ -153,22 +153,22 @@ class Draw:
         output = {key: "" for key in keys_values.keys()}
         for i in range(self.block_size // 2):
             if self.result["fout1"][r][i] == 1:
-                output["xor"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["xor"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
             if self.result["fout2"][r][i] == 1:
-                output["right"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["right"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
             for key, (val_fill, val_patt, val_mark) in keys_values.items():
                 if key == "key" and r < self.RF - 1:
-                    output["key"] += "\Fill[{0}]{{s{1}}}".format(
+                    output["key"] += r"\Fill[{0}]{{s{1}}}".format(
                         self.keyfillcolor[self.result["IK"][self.RD + self.RB + r+1][i]], i) if \
                         self.result["IK"][self.RD + self.RB + r+1][i] != 0 else ""
                 else:
-                    output[key] += "\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
+                    output[key] += r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
                         self.result[val_fill][r][i] != 0 else ""
 
                 if val_patt and self.result[val_patt][r][i] == 1:
-                    output[key] += "\PattCell[black]{{s{0}}}".format(i)
+                    output[key] += r"\PattCell[black]{{s{0}}}".format(i)
                 if val_mark and self.result[val_mark][r][i] == 1:
-                    output[key] += "\MarkCell[red]{{s{0}}}".format(i)
+                    output[key] += r"\MarkCell[red]{{s{0}}}".format(i)
 
 
         return output
@@ -268,7 +268,7 @@ class Draw:
                 {""" + state["right"] + r"""} % right""" + "\n"
 
         contents += r"""    \end{tikzpicture}""" + "\n"
-        # contents += r"""\caption{""" + str(self.RT) + " rounds of \SIMON["+str(self.block_size)+"].}\n"
+        # contents += r"""\caption{""" + str(self.RT) + r" rounds of \SIMON["+str(self.block_size)+"].}\n"
         contents += r"""\end{figure}""" + "\n"
         contents += r"""\end{document}""" + "\n"
         with open(self.output_file_name, "w") as f:

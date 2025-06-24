@@ -10,7 +10,7 @@ from draw import *
 line_separator = "#" * 55
 
 
-class IDARXDistinguisher:
+class ImpossibleARXDistinguisher:
     def __init__(self, params) -> None:
         self.RD = params["RD"]
         self.block_size = params["block_size"]
@@ -115,7 +115,7 @@ def parse_command_line():
 
 def main():
     args, params = parse_command_line()
-    id_distinguisher = IDARXDistinguisher(params)
+    id_distinguisher = ImpossibleARXDistinguisher(params)
     id_distinguisher.search()
 
 

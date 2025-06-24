@@ -24,9 +24,9 @@ class Draw(object):
 
         for i in range(self.block_size // 2):
             for key, (val_up, val_lo) in keys_values.items():
-                output[key] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
+                output[key] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
                     self.result[val_up][r][i] != 0 else ""
-                output[key] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
+                output[key] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
                     self.result[val_lo][r][i] != 0 else ""
         return output
 
@@ -59,7 +59,7 @@ class Draw(object):
                 {""" + state["left"] + """} 
                 {""" + state["right"] + "}" + "\n")
         contents += r"""    \end{tikzpicture}""" + "\n"
-        contents += r"""\caption{""" + str(self.RD) + " rounds of \SIMON[" + str(self.block_size) +"].}\n"
+        contents += r"""\caption{""" + str(self.RD) + r" rounds of \SIMON[" + str(self.block_size) +"].}\n"
         contents += r"""\end{figure}""" + "\n"
         contents += r"""\end{document}""" + "\n"
         with open(self.output_file_name, "w") as file:

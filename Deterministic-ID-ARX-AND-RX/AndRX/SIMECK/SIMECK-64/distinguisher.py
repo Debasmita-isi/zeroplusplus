@@ -8,7 +8,7 @@ from drawdistinguisher import *
 line_separator = "#" * 55
 
 
-class IntegralARXDistinguisher:
+class ImpossibleAndRXDistinguisher:
     def __init__(self, params) -> None:
         self.RD = params["RD"]
         self.MD = params["MD"]
@@ -73,7 +73,7 @@ def load_params(args):
         "RD": 17,
         "MD": 9,
         "output_file_name": "output.tex",
-        "cp_solver_name": "ortools",
+        "cp_solver_name": "cp-sat",
         "time_limit": -1,
         "block_size": 64,
         "number_of_threads": 8
@@ -99,7 +99,7 @@ def main():
     '''
     Parse the command line arguments
     '''
-    parser = argparse.ArgumentParser(description="Integral distinguisher for SIMECK.")
+    parser = argparse.ArgumentParser(description="Impossible distinguisher for SIMECK.")
     parser.add_argument("-RD", type=int, default=17, help="The number of rounds")
     parser.add_argument("-MD", type=int, default=9, help="The number of middle rounds")
     parser.add_argument("-output-file-name", type=str, default="output.tex", help="The name of the output file")
@@ -115,8 +115,8 @@ def main():
     args = parser.parse_args()
     params = load_params(args)
 
-    integral_distinguisher = IntegralARXDistinguisher(params)
-    integral_distinguisher.search()
+    impossible_distinguisher = ImpossibleAndRXDistinguisher(params)
+    impossible_distinguisher.search()
 
 
 if __name__ == "__main__":

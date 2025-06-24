@@ -59,6 +59,7 @@ class ZC:
         attack_summary = ""
         attack_summary += "Attack Parameters\n"
         attack_summary += "-----------------\n"
+        attack_summary += "Block Size = {}\n".format(self.block_size)
         attack_summary += "RD = {}\n".format(self.RD)
         attack_summary += "Solver = {}\n".format(self.cp_solver_name)
         attack_summary += "Time limit = {}\n".format(self.time_limit)

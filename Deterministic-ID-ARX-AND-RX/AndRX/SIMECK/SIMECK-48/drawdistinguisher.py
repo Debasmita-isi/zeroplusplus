@@ -70,8 +70,8 @@ class Draw(object):
         output = {key: "" for key in keys_values.keys()}
         for i in range(self.block_size // 2):
             for key, (val_up, val_lo) in keys_values.items():
-                output[key] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if self.result[val_up][r][i] != 0 else ""
-                output[key] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if self.result[val_lo][r][i] != 0 else ""
+                output[key] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if self.result[val_up][r][i] != 0 else ""
+                output[key] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if self.result[val_lo][r][i] != 0 else ""
         return output
 
     def draw_final_ed(self, r):
@@ -81,10 +81,10 @@ class Draw(object):
         """
         output = {
             "left": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xul"][r][i]], i) +
-                            "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
+                            r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdl"][r][i]], i)
                             for i in range(self.block_size // 2)),
             "right": "".join(r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result["xur"][r][i]], i) +
-                             "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
+                             r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result["xdr"][r][i]], i)
                              for i in range(self.block_size // 2))
         }
         return output
@@ -164,7 +164,7 @@ class Draw(object):
                 \end{scope}""" + "\n"
 
         contents += r"""    \end{tikzpicture}""" + "\n"
-        contents += r"""\caption{""" + str(self.RD) + " rounds of \SIMECK[" + str(self.block_size) + "].}\n"
+        contents += r"""\caption{""" + str(self.RD) + r" rounds of \SIMECK[" + str(self.block_size) + "].}\n"
         contents += r"""\end{figure}""" + "\n"
         contents += r"""\end{document}"""
         return contents
@@ -198,7 +198,7 @@ class Draw(object):
                         {""" + state["left"] + """}
                         {""" + state["right"] + "}\n" + "\n"
         contents += r"""   \end{tikzpicture}""" + "\n"
-        contents += r"""\caption{""" + str(self.RD) + " rounds of \SIMECK[" + str(self.block_size) + "].}\n"
+        contents += r"""\caption{""" + str(self.RD) + r" rounds of \SIMECK[" + str(self.block_size) + "].}\n"
         contents += r"""\end{figure}""" + "\n"
         contents += r"""\end{document}"""
         return contents
