@@ -116,7 +116,7 @@ To set up the code for use, follow the steps below:
 
    Make sure to install the listed software and solvers according to their documentation. In this context, one can follow the following two methods.
 
-   ### Method 1
+### Method 1
 
    We have prepared a Dockerfile to install all the dependencies. 
    You can navigate to the [Dockerfile](docker) and build the Docker image using the following command:
@@ -134,7 +134,7 @@ To set up the code for use, follow the steps below:
 
    Once all dependencies are installed, you can start running the scripts for the corresponding ciphers.
 
-   ### Method 2
+### Method 2
 
    In this method, we provide the insights on how to install MiniZinc software.
    
