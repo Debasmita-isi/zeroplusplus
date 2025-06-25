@@ -134,7 +134,7 @@ To set up the code for use, follow the steps below:
 
 ### Method 2
 
-   In this method, we provide insights on how to install the necessary software tools to run our code. Regarding the installation of CP solvers, it is noteworthy that several CP solvers come pre-packaged with MiniZinc, implying that you don't need to install them separately. We use Or-Tools as one of the CP solvers. Now, Or Tools CP-SAT is bundled with MiniZinc after version 2.8.0. Hence, by installing the latest version of MiniZinc, one can use `OR Tools CP-SAT` without any further installation.
+   In this method, we provide insights on how to install the necessary software tools to run our code. Regarding the installation of CP solvers, it is noteworthy that several CP solvers come pre-packaged with MiniZinc, implying that you don't need to install them separately. We use Or-Tools as one of the CP solvers. Now, `Or Tools CP-SAT` is bundled with MiniZinc after version 2.8.0. Hence, by installing the latest version of MiniZinc, one can use `OR Tools CP-SAT` without any further installation.
 
 1. **Download and Extract the Latest MiniZinc**:
 
@@ -198,7 +198,7 @@ This repository presents tools for finding ID distinguishers on ARX and AndRX ci
 To find ID or ZC distinguishers for ARX or AndRX ciphers, use the following command:
 
 ```bash
-minizinc --solver ortools -p 8 distinguisher.mzn data.dzn
+minizinc --solver cp-sat -p 8 distinguisher.mzn data.dzn
 ```
 
 - **`distinguisher.mzn`**: This file contains the constraint programming (CP) model to find the distinguisher in `.mzn` format.
@@ -209,7 +209,7 @@ minizinc --solver ortools -p 8 distinguisher.mzn data.dzn
 The tool will identify the distinguisher and print it in the terminal. To save the distinguisher output to a text file, use:
 
 ```bash
-minizinc --solver ortools -p 8 distinguisher.mzn data.dzn > output.txt
+minizinc --solver cp-sat -p 8 distinguisher.mzn data.dzn > output.txt
 ```
 
 Alternatively, you can utilize the Python interface of Or-Tools to solve and process the results, which will help you generate the shape of the attack:
@@ -223,7 +223,7 @@ python3 distinguisher.py
 To find ID key recovery attacks for AndRX ciphers, run the following command:
 
 ```bash
-minizinc --solver ortools -p 8 attacki.mzn data.dzn > output.txt
+minizinc --solver cp-sat -p 8 attacki.mzn data.dzn > output.txt
 ```
 
 - **`attacki.mzn`**: This file contains the CP model for finding ID key recovery in `.mzn` format.
@@ -248,7 +248,7 @@ To find 6-round ID distinguishers on SPECK128, navigate into the following folde
 1. **Using MiniZinc**: First, run the distinguisher model using MiniZinc and save the output to a text file.
    
    ```bash
-   minizinc --solver ortools -p 8 distinguisher.mzn data.dzn > output.txt
+   minizinc --solver cp-sat -p 8 distinguisher.mzn data.dzn > output.txt
    ```
    The following field represents the terminal output of the above command:
     ```
@@ -490,7 +490,7 @@ To find a 15-round ZC distinguisher on SIMECK48 based on indirect contradiction,
 1. **Using MiniZinc**: First, run the distinguisher model using MiniZinc and save the output to a text file.
    
     ```bash
-    minizinc --solver ortools -p 8 distinguisher.mzn data.dzn
+    minizinc --solver cp-sat -p 8 distinguisher.mzn data.dzn
     ```
     The following field represents the terminal output of the above command:
     ```
@@ -1062,7 +1062,7 @@ To find a 15-round ZC distinguisher on SIMECK48 based on indirect contradiction,
     Attack parameters:
     RD = 15
     MD = 8
-    Solver = ortools
+    Solver = cp-sat
     Time limit = -1
     Number of threads = 8
     Status = OPTIMAL_SOLUTION
@@ -1119,7 +1119,7 @@ To find a 22-round ID key-recovery attack for SIMON-64-96, navigate to the follo
     MD: 5
     RF: 5
     real: False
-    CP solver: ortools
+    CP solver: cp-sat
     Number of threads: 8
     Time limit: 3600
     #######################################################
