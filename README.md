@@ -114,7 +114,7 @@ To set up the code for use, follow the steps below:
    ```
 3. **Install the required dependencies**:
 
-   Make sure to install the listed software and solvers according to their documentation. In this context, one can follow the following two methods.
+   Ensure that you install the listed software and solvers according to their respective documentation. In this context, one can follow the following two methods.
 
 ### Method 1
 
@@ -129,15 +129,66 @@ To set up the code for use, follow the steps below:
   ```bash
   docker run --rm -it zeroplusplus
   ```
-  
-1. **Run the code**:
-
-   Once all dependencies are installed, you can start running the scripts for the corresponding ciphers.
+ 
+  Once all dependencies are installed, you can start running the scripts for the corresponding ciphers.
 
 ### Method 2
 
-   In this method, we provide the insights on how to install MiniZinc software.
+   In this method, we provide insights on how to install the necessary software tools to run our code. Regarding the installation of CP solvers, it is noteworthy that several CP solvers come pre-packaged with MiniZinc, implying that you don't need to install them separately. We use Or-Tools as one of the CP solvers. Now, Or Tools CP-SAT is bundled with MiniZinc after version 2.8.0. Hence, by installing the latest version of MiniZinc, one can use `OR Tools CP-SAT` without any further installation.
+
+1. **Download and Extract the Latest MiniZinc**:
+
+   Go to the official website: https://www.minizinc.org/software.html. Then, download the `.tgz` file (e.g., `MiniZincIDE-2.9.3-bundle-linux-x86_64.tgz`). After this, extract the MiniZinc release you have downloaded using the following command:
+
+   ```bash
+   tar -xvzf MiniZincIDE-*.tgz
+   ```
+   Now, move the extracted folder to /opt or any preferred location:
+
+   ```bash
+   sudo mv MiniZincIDE-* /opt/minizinc
+   ```
+2. **Add MiniZinc to system PATH**
+
+   To make MiniZinc accessible from any terminal, run the following command:
+
+   ```bash
+   echo 'export PATH="/opt/minizinc/bin:$PATH"' >> ~/.bashrc
+   source ~/.bashrc
+   ```
+3. **Install Python**
+
+   Check your Python version: 
+ 
+   ```bash
+   python3 --version
+   ```
+
+   If Python3 is not installed, install it using the following command:
+
+   ```bash
+   sudo apt update
+   sudo apt install python3 python3-pip python3-venv
+   ```
+
+4. **Create and Activate Virtual Environment**
+
+   Create and activate a virtual environment named `venv` (or any name you prefer)
    
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+5. **Install Required Python Packages**
+
+   Install the necessary packages used in this project:
+
+   ```bash
+   pip install minizinc
+   pip install sagemath
+   ```
+
 
 ## Usage
 This repository presents tools for finding ID distinguishers on ARX and AndRX ciphers, ZC distinguishers on AndRX ciphers, and ID key recovery attacks on AndRX ciphers. Follow the instructions below to utilize our tools effectively.
