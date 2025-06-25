@@ -1,0 +1,52 @@
+# macOS system files
+.DS_Store
+
+# Python cache and environment
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment folders
+venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Byte-compiled / optimized / DLL files
+*.so
+
+# SageMath compiled files (if any)
+.sage.py
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# MiniZinc solver output (optional)
+*.dzn
+*.mzn~
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Build artifacts and temp files
+build/
+dist/
+*.egg-info/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Other OS temp files
+Thumbs.db
+ehthumbs.db
+
+
