@@ -105,7 +105,7 @@ To set up the code for use, follow the steps below:
    ```bash
    git clone https://github.com/Debasmita-isi/zeroplusplus.git
     ```
-2. **Navigate to the project directory:**:
+2. **Navigate to the project directory**:
 
    After cloning, navigate into the project directory:
 
@@ -114,12 +114,15 @@ To set up the code for use, follow the steps below:
    ```
 3. **Install the required dependencies**:
 
-   Make sure to install the listed software and solvers according to their documentation.
-   We have also prepared a Dockerfile to install all the dependencies. 
+   Make sure to install the listed software and solvers according to their documentation. In this context, one can follow the following two methods.
+
+   ### Method 1
+
+   We have prepared a Dockerfile to install all the dependencies. 
    You can navigate to the [Dockerfile](docker) and build the Docker image using the following command:
 
   ```bash
-  docker build Dockerfile -t zeroplusplus .
+  sudo docker build Dockerfile -t zeroplusplus
   ```
   After building the Docker image, you can run the container using the following command:
       
@@ -130,6 +133,10 @@ To set up the code for use, follow the steps below:
 1. **Run the code**:
 
    Once all dependencies are installed, you can start running the scripts for the corresponding ciphers.
+
+   ### Method 2
+
+   In this method, we provide the insights on how to install MiniZinc software.
    
 
 ## Usage
