@@ -34,25 +34,25 @@ class Draw:
 
         for i in range(self.block_size // 2):
             for key, (val_up, val_lo) in keys_values.items():
-                output[key] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
+                output[key] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
                 self.result[val_up][r][i] != 0 else ""
-                output[key] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
+                output[key] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
                 self.result[val_lo][r][i] != 0 else ""
             if r == 0 and self.result["fin2"][self.RB - 1][i] == 1:
-                output["left"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["left"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
 
         return output
 
     def draw_final_eb(self, r):
         output = {
-            "left": "".join("\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result["xul"][r][i]], i) for i in
+            "left": "".join(r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result["xul"][r][i]], i) for i in
                             range(self.block_size // 2) if self.result["xul"][r][i] != 0),
-            "right": "".join("\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result["xur"][r][i]], i) for i in
+            "right": "".join(r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result["xur"][r][i]], i) for i in
                              range(self.block_size // 2) if self.result["xur"][r][i] != 0),
         }
         for i in range(self.block_size // 2):
             if (self.result["fin2"][self.RB - 1][i] == 1):
-                output["left"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["left"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
         return output
     def draw_final_ed(self, r):
         """
@@ -67,12 +67,12 @@ class Draw:
 
         for i in range(self.block_size // 2):
             for key, (val_fill, val_patt, val_mark) in keys_values.items():
-                output[key] += "\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
+                output[key] += r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
                     self.result[val_fill][r][i] != 0 else ""
                 if self.result[val_patt][r][i] == 1:
-                    output[key] += "\PattCell[black]{{s{0}}}".format(i)
+                    output[key] += r"\PattCell[black]{{s{0}}}".format(i)
                 if self.result[val_mark][r][i] == 1:
-                    output[key] += "\MarkCell[red]{{s{0}}}".format(i)
+                    output[key] += r"\MarkCell[red]{{s{0}}}".format(i)
 
         return output
 
@@ -95,20 +95,20 @@ class Draw:
 
         for i in range(self.block_size // 2):
             if self.result["fin1"][r][i] == 1:
-                output["xor"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["xor"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
             if (r > 0 and self.result["fin2"][r - 1][i] == 1):
-                output["left"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["left"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
             for key, (val_fill, val_patt, val_mark) in keys_values.items():
                 if key == "key":
-                    output["key"] += "\Fill[{0}]{{s{1}}}".format(
+                    output["key"] += r"\Fill[{0}]{{s{1}}}".format(
                         self.keyfillcolor[self.result["IK"][r-1][i]], i) if self.result["IK"][r-1][i] != 0 else ""
                 else:
-                    output[key] += "\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
+                    output[key] += r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
                         self.result[val_fill][r][i] != 0 else ""
                     if val_patt and self.result[val_patt][r][i] == 1:
-                        output[key] += "\PattCell[black]{{s{0}}}".format(i)
+                        output[key] += r"\PattCell[black]{{s{0}}}".format(i)
                     if val_mark and self.result[val_mark][r][i] == 1:
-                        output[key] += "\MarkCell[red]{{s{0}}}".format(i)
+                        output[key] += r"\MarkCell[red]{{s{0}}}".format(i)
 
         return output
 
@@ -131,22 +131,22 @@ class Draw:
 
         for i in range(self.block_size // 2):
             if self.result["fout1"][r][i] == 1:
-                output["xor"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["xor"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
             if self.result["fout2"][r][i] == 1:
-                output["right"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["right"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
             for key, (val_fill, val_patt, val_mark) in keys_values.items():
                 if (key == "key") and (r < self.RF - 1):
-                    output["key"] += "\Fill[{0}]{{s{1}}}".format(
+                    output["key"] += r"\Fill[{0}]{{s{1}}}".format(
                         self.keyfillcolor[self.result["IK"][self.RD + self.RB + r+1 ][i]], i) if \
                         self.result["IK"][self.RD + self.RB + r +1][i] != 0 else ""
                 else:
-                    output[key] += "\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
+                    output[key] += r"\Fill[{0}]{{s{1}}}".format(self.fillcolor[self.result[val_fill][r][i]], i) if \
                         self.result[val_fill][r][i] != 0 else ""
 
                 if val_patt and self.result[val_patt][r][i] == 1:
-                    output[key] += "\PattCell[black]{{s{0}}}".format(i)
+                    output[key] += r"\PattCell[black]{{s{0}}}".format(i)
                 if val_mark and self.result[val_mark][r][i] == 1:
-                    output[key] += "\MarkCell[red]{{s{0}}}".format(i)
+                    output[key] += r"\MarkCell[red]{{s{0}}}".format(i)
 
         return output
     def draw_edf(self, r):
@@ -162,12 +162,12 @@ class Draw:
 
         for i in range(self.block_size // 2):
             for key, (val_up, val_lo) in keys_values.items():
-                output[key] += "\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
+                output[key] += r"\TFill[{0}]{{s{1}}}".format(self.fillcolor_up[self.result[val_up][r][i]], i) if \
                 self.result[val_up][r][i] != 0 else ""
-                output[key] += "\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
+                output[key] += r"\BFill[{0}]{{s{1}}}".format(self.fillcolor_lo[self.result[val_lo][r][i]], i) if \
                 self.result[val_lo][r][i] != 0 else ""
             if r == 0 and self.result["fin2"][self.RB - 1][i] == 1:
-                output["left"] += "\FrameCell[yellow]{{s{0}}}".format(i)
+                output["left"] += r"\FrameCell[yellow]{{s{0}}}".format(i)
         return output
     def find_contradiction(self):
         """
@@ -252,7 +252,7 @@ class Draw:
               {""" + state["left"] + """}
               {""" + state["right"] + "}\n"
         contents += r"""  \end{tikzpicture}""" + "\n"
-        # contents += r"""\caption{""" + str(self.RT) + " rounds of \SIMECK[" + str(self.block_size) + "].}\n"
+        # contents += r"""\caption{""" + str(self.RT) + r" rounds of \SIMECK[" + str(self.block_size) + "].}\n"
         contents += r"""\end{figure}""" + "\n"
         # contents += r"""\begin{comment}""" + "\n"
         # contents += self.attack_summary

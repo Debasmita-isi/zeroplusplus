@@ -75,7 +75,7 @@ def load_params(args):
         "RD": 17,
         "MD": 8,
         "output_file_name": "output.tex",
-        "cp_solver_name": "ortools",
+        "cp_solver_name": "cp-sat",
         "time_limit": -1,
         "block_size": 64,
         "number_of_threads": 8

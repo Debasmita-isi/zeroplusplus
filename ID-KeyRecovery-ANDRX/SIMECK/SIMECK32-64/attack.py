@@ -163,7 +163,7 @@ def loadparameters(args):
               "MD" : 4,
               "RF" : 4,
               "real" : False,
-              "cp_solver_name" : "ortools",
+              "cp_solver_name" : "cp-sat",
               "num_of_threads" : 8,
               "time_limit" : None,
               "output_file_name" : "output.tex"}
